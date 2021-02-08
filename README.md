@@ -69,16 +69,16 @@ _start_time, hour, day, week, month, year, weekday_
 - Configure the IAM role to AmazonS3ReadOnlyAccess.
 - We recommend to use dc2.large cluster with 4 nodes. Note that each node a cost of USD 0.25/h (on-demand option) per cluster
 
-2. Open a terminal
+2. Open a terminal in your workstation
 
-3. Run 'create_tables.py'
+3. Run ```create_tables.py```
 - This will create the tables in the data warehouse
 
-4. Run 'etl.py'
+4. Run ```etl.py```
 - This will run the ETL process
 
 ### Project Structure
-- create_tables.py - Drop old tables (if exist) ad re-create new tables
-- etl.py - Executes the queries that extract JSON data from the S3 bucket and ingest them to Redshift
-- sql_queries.py - Contains variables with SQL statement in String formats, partitioned by CREATE, DROP, COPY and INSERT statements
-- dhw.cfg - Configuration file that contains info about Redshift, IAM and S3
+- ```create_tables.py``` - Drop existing tables and recreate them
+- ```etl.py``` - Executes the queries that extract JSON data from the S3 bucket and ingest them to Redshift
+- ```sql_queries.py``` - Contains variables with SQL statement in String formats, partitioned by CREATE, DROP, COPY and INSERT statements
+- ```dhw.cfg``` - Configuration file that contains info about Redshift, IAM and S3
