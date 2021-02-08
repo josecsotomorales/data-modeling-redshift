@@ -61,12 +61,12 @@ staging_songs_table_create = ("""create  table if not exists stg_songs(
 
 songplay_table_create = ("""create table if not exists f_songplays(
                             songplay_id int identity(1,1) primary key,
-                            start_time timestamp,
+                            start_time timestamp not null,
                             user_id integer not null,
                             level text,
-                            song_id text,
-                            artist_id text,
-                            session_id integer,
+                            song_id text not null,
+                            artist_id text not null,
+                            session_id integer not null,
                             location text,
                             user_agent text
                         )
@@ -84,7 +84,7 @@ user_table_create = ("""create table if not exists d_users(
 song_table_create = ("""create table if not exists d_songs(
                         song_id text primary key,
                         title text,
-                        artist_id text,
+                        artist_id text not null,
                         year integer,
                         duration numeric
                     )
